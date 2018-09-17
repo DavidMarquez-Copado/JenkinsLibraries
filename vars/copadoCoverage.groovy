@@ -218,7 +218,7 @@ static boolean shouldFinish(CliBuilder cli, String option) {
 }
 
 
-def updateCopadoCoverage(args) {
+static void updateCopadoCoverage(args) {
 
     // ****************************** INPUT PARAMETERS ******************************
     def cli = new CliBuilder(usage: 'copado_coverage.groovy -[chflms] [date] [prefix]')
