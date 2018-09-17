@@ -1,3 +1,5 @@
+#!/usr/bin/env groovy
+
 // =======================================================================================================================================
 // Class definition
 // =======================================================================================================================================
@@ -218,7 +220,7 @@ static boolean shouldFinish(CliBuilder cli, String option) {
 }
 
 
-static void updateCopadoCoverage(args) {
+static void updateCopadoCoverage(String[] args) {
 
     // ****************************** INPUT PARAMETERS ******************************
     def cli = new CliBuilder(usage: 'copado_coverage.groovy -[chflms] [date] [prefix]')
@@ -272,6 +274,4 @@ static void updateCopadoCoverage(args) {
 // =======================================================================================================================================
 // Main
 // =======================================================================================================================================
-def main(String[] args) {
-    updateCopadoCoverage(args)
-}
+updateCopadoCoverage(args)
