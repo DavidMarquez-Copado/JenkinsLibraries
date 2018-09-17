@@ -27,7 +27,7 @@ class SalesforceService {
         String request_params = "grant_type=password&client_id=${clientId}&client_secret=${clientSecret}&username=${username}&password=${password}"
         def request = SalesforceService.buildPostRequest("https://login.salesforce.com/services/oauth2/token?${request_params}")
         println "\nResponse:\n" + request.getResponseMessage()
-        assert request.getResponseCode() == 200
+        assert 200 == request.getResponseCode()
 
         // Parse request
         String salesforceTokenResponseJson = request.inputStream.text
@@ -51,7 +51,7 @@ class SalesforceService {
         request.requestMethod = "GET"
 
         println "\nResponse:\n" + request.getResponseMessage()
-        assert request.getResponseCode() == 200
+        assert 200 == request.getResponseCode()
 
         String requestJson = request.inputStream.text
         println requestJson
@@ -74,7 +74,7 @@ class SalesforceService {
 
 
         println "\nResponse:\n" + userStoryEditRequest.getResponseMessage()
-        assert userStoryEditRequest.getResponseCode() == 204
+        assert 204 == userStoryEditRequest.getResponseCode()
 
     }
 
@@ -92,7 +92,7 @@ class SalesforceService {
         def attachmentRequest = buildPostRequest("${instanceUrl}/services/data/v20.0/sobjects/attachment/", sessionToken, attachmentStr)
 
         println "\nResponse:\n" + attachmentRequest.getResponseMessage()
-        assert attachmentRequest.getResponseCode() == 201
+        assert 201 == attachmentRequest.getResponseCode()
     }
 
     static HttpURLConnection buildPostRequest(String urlStr) {
@@ -201,7 +201,7 @@ class CoverageService {
         }
 
         println "\n-------- COBERTURA: Min Rate -------\n" + minRate
-        assert minRate != 999.0
+        assert 999.0 != minRate
 
         return minRate
     }
