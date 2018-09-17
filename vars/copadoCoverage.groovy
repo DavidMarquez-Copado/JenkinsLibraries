@@ -220,7 +220,7 @@ static boolean shouldFinish(CliBuilder cli, String option) {
 }
 
 
-static void main(String[] args) {
+static void produceCopadoCoverage(String[] args) {
 
     // ****************************** INPUT PARAMETERS ******************************
     def cli = new CliBuilder(usage: 'copado_coverage.groovy -[chflms] [date] [prefix]')
@@ -274,4 +274,4 @@ static void main(String[] args) {
 // =======================================================================================================================================
 // Main
 // =======================================================================================================================================
-main(args)
+produceCopadoCoverage(args)
