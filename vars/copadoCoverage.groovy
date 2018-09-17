@@ -222,7 +222,7 @@ static boolean shouldFinish(CliBuilder cli, String option) {
 
 static void main(String[] args) {
 
-    println "Starting..."
+    java.lang.System.out.println("Starting...")
 
     // ****************************** INPUT PARAMETERS ******************************
     def cli = new CliBuilder(usage: 'copado_coverage.groovy -[chflms] [date] [prefix]')
